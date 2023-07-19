@@ -1,0 +1,5 @@
+app:
+  github:
+    token: YOUR_GITHUB_TOKEN
+    url:
+      users: https://api.github.com/users
