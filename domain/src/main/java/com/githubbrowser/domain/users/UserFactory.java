@@ -1,4 +1,4 @@
-package com.githubrowser.domain.users;
+package com.githubbrowser.domain.users;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

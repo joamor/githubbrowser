@@ -1,8 +1,10 @@
 package com.githubbrowser.api.users;
 
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NonNull;
 
-import java.math.BigDecimal;
 import java.time.Instant;
 
 @Builder
@@ -10,7 +12,7 @@ import java.time.Instant;
 public class UserResponseDto {
 
     @NonNull
-    private final String id;
+    private final Integer id;
 
     @NonNull
     private String login;
@@ -27,6 +29,6 @@ public class UserResponseDto {
     private Instant createdAt;
 
     @NonNull
-    private BigDecimal calculation;
+    private Integer calculation;
 
 }
