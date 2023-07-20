@@ -1,4 +1,4 @@
-package com.githubrowser.domain.users;
+package com.githubbrowser.domain.users;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -9,7 +9,7 @@ import lombok.NonNull;
 import java.time.Instant;
 
 @Data
-@Builder
+@Builder(toBuilder = true)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class User {
 
@@ -36,5 +36,9 @@ public class User {
 
     @NonNull
     private final Integer publicReposNumber;
+
+    public Integer getCalculation() {
+        return followersNumber == 0 ? 0 : (6 / followersNumber * (2 + publicReposNumber));
+    }
 
 }
