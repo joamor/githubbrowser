@@ -1,8 +1,8 @@
 package com.githubbrowser.infrastructure.users;
 
-import com.githubrowser.domain.users.User;
-import com.githubrowser.domain.users.UserFactory;
-import com.githubrowser.domain.users.UserRepository;
+import com.githubbrowser.domain.users.User;
+import com.githubbrowser.domain.users.UserFactory;
+import com.githubbrowser.domain.users.UserRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
