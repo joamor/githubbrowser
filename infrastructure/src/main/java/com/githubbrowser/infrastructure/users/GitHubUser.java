@@ -1,7 +1,7 @@
 package com.githubbrowser.infrastructure.users;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.githubrowser.domain.users.UserProvider;
+import com.githubbrowser.domain.users.UserProvider;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
