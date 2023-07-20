@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/githubbrowser
+    username: USERNAME
+    password: PASSWORD
+app:
+  github:
+    token: YOUR_GITHUB_TOKEN
+    users_url: https://api.github.com/users
