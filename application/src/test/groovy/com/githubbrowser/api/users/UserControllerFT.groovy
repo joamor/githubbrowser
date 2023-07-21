@@ -1,29 +1,11 @@
-package com.users.githubbrowser.api
+package com.githubbrowser.api.users
 
+import com.githubbrowser.api.BaseApplicationFT
 import com.githubbrowser.infrastructure.users.GitHubUserFaker
-import com.githubbrowser.infrastructure.users.GitHubUserRestClient
-import org.spockframework.spring.SpringBean
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
-import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.MediaType
-import org.springframework.test.context.ActiveProfiles
-import org.springframework.test.context.ContextConfiguration
-import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
-import spock.lang.Specification
 
-@ActiveProfiles("ft")
-@AutoConfigureMockMvc
-@ContextConfiguration
-@SpringBootTest(classes = [TestContext.class])
-class UserControllerFT extends Specification {
-
-    @Autowired
-    MockMvc mockMvc
-
-    @SpringBean
-    GitHubUserRestClient gitHubUserRestClient = Mock(GitHubUserRestClient.class)
+class UserControllerFT extends BaseApplicationFT {
 
     def 'should throw 404 if user not found'() {
         given:

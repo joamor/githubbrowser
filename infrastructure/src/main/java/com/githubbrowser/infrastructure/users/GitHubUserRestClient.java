@@ -7,9 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Optional;
@@ -25,11 +25,12 @@ public class GitHubUserRestClient {
         HttpHeaders headers = GitHubHeadersFactory.createDefaultHeaders(gitHubProperties.getToken());
         HttpEntity<GitHubUser> httpEntity = new HttpEntity<>(headers);
         String url = gitHubProperties.getUsersUrl() + "/" + login;
-        ResponseEntity<GitHubUser> response = restTemplate.exchange(url, HttpMethod.GET, httpEntity, GitHubUser.class);
-        if (response.getStatusCode() == HttpStatus.NOT_FOUND) {
+        try {
+            ResponseEntity<GitHubUser> response = restTemplate.exchange(url, HttpMethod.GET, httpEntity, GitHubUser.class);
+            return Optional.ofNullable(response.getBody());
+        } catch (HttpClientErrorException exception) {
             return Optional.empty();
         }
-        return Optional.ofNullable(response.getBody());
     }
 
 }

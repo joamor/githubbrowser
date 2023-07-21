@@ -16,7 +16,7 @@ public class AppExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(ObjectNotFoundException.class)
     public BaseExceptionResponseDto handleException(ObjectNotFoundException exception) {
         log.error("Caught exception: " + exception.getMessage());
-        return new BaseExceptionResponseDto(exception.getExceptionCause(), exception.getMessage());
+        return BaseExceptionResponseDto.of(exception.getExceptionCause(), exception.getMessage());
     }
 
 }
