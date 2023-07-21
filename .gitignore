@@ -1,2 +1,6 @@
 .idea/
-.target/
+target/
+/api/target/
+/application/target/s
+/domain/target/
+/infrastructure/target/
