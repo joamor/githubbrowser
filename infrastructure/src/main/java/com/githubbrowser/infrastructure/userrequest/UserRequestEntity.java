@@ -4,7 +4,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Version;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,16 +13,15 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Data
-@SuperBuilder
+@SuperBuilder(toBuilder = true)
 @Entity
-@Table("user_requests")
+@Table(name = "user_requests")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserRequestEntity implements Serializable {
 
     @Id
     private String login;
 
-    @Version
     @Column(name = "request_counter", nullable = false)
     private Integer requestCounter;
 

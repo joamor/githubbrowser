@@ -12,8 +12,11 @@ public class UserRequestRepositoryDb implements UserRequestRepository {
     private final UserRequestRepositoryJpa userRequestRepositoryJpa;
 
     @Override
-    public UserRequestEntity save(String login) {
-        return userRequestRepositoryJpa.save(UserRequestEntity.of(login));
+    public void save(String login) {
+        UserRequestEntity userRequest = userRequestRepositoryJpa.findByLogin(login)
+                .map(UserRequestEntityFactory::updateRequestCounter)
+                .orElseGet(() -> UserRequestEntityFactory.create(login));
+        userRequestRepositoryJpa.save(userRequest);
     }
 
 }
