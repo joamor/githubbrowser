@@ -1,6 +1,6 @@
 .idea/
 target/
 /api/target/
-/application/target/s
+/application/target/
 /domain/target/
 /infrastructure/target/
