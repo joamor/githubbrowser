@@ -3,6 +3,11 @@ spring:
     url: jdbc:postgresql://localhost:5432/githubbrowser
     username: USERNAME
     password: PASSWORD
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    change-log: classpath:db/liquibase-changelog.yaml
 app:
   github:
     token: YOUR_GITHUB_TOKEN
