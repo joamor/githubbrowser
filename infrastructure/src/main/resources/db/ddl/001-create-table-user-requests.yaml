@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-table-user-requests
+      author: Joanna Mlodzikowska
+      createTable:
+        tableName: user_requests
+        columns:
+          - column:
+              name: login
+              type: text
+              constraints:
+                primaryKey: true
+          - column:
+              name: request_counter
+              type: integer
+              defaultValueNumeric: 0
+              constraints:
+                nullable: false

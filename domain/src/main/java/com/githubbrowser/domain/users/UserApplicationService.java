@@ -1,5 +1,6 @@
 package com.githubbrowser.domain.users;
 
+import com.githubbrowser.domain.userrequest.UserRequestRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,8 +13,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserApplicationService {
 
     private final UserRepository userRepository;
+    private final UserRequestRepository userRequestRepository;
 
     public User findByLogin(String login) {
+        userRequestRepository.save(login);
         return userRepository.getByLogin(login);
     }
 
