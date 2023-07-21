@@ -7,7 +7,7 @@ class UserFaker {
     static User USER = User.builder()
             .id(1)
             .login("octocat")
-            .name('Test Test')
+            .name(Optional.of('Test Test'))
             .type('User')
             .avatarUrl('https://avatars.githubusercontent.com/u/19227682?v=4')
             .createdAt(Instant.parse('2008-01-14T04:33:35Z'))

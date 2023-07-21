@@ -24,7 +24,7 @@ public class GitHubUserRestClient {
     public Optional<GitHubUser> findUserByLogin(String login) {
         HttpHeaders headers = GitHubHeadersFactory.createDefaultHeaders(gitHubProperties.getToken());
         HttpEntity<GitHubUser> httpEntity = new HttpEntity<>(headers);
-        String url = gitHubProperties + "/" + login;
+        String url = gitHubProperties.getUsersUrl() + "/" + login;
         ResponseEntity<GitHubUser> response = restTemplate.exchange(url, HttpMethod.GET, httpEntity, GitHubUser.class);
         if (response.getStatusCode() == HttpStatus.NOT_FOUND) {
             return Optional.empty();

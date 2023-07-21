@@ -4,7 +4,7 @@ import java.time.Instant;
 
 public interface UserProvider {
 
-    Integer getId();
+    int getId();
 
     String getLogin();
 
@@ -16,8 +16,8 @@ public interface UserProvider {
 
     Instant getCreatedAt();
 
-    Integer getFollowersNumber();
+    int getFollowersNumber();
 
-    Integer getPublicReposNumber();
+    int getPublicReposNumber();
 
 }

@@ -13,7 +13,7 @@ class UserResponseDtoFactoryTest extends Specification {
         verifyAll(result) {
             id == UserFaker.USER.id
             login == UserFaker.USER.login
-            name == UserFaker.USER.name
+            name == UserFaker.USER.name.get()
             type == UserFaker.USER.type
             avatarUrl == UserFaker.USER.avatarUrl
             createdAt == UserFaker.USER.createdAt

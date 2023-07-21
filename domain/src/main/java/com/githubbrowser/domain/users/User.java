@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NonNull;
 
 import java.time.Instant;
+import java.util.Optional;
 
 @Data
 @Builder(toBuilder = true)
@@ -14,13 +15,14 @@ import java.time.Instant;
 public class User {
 
     @NonNull
-    private final Integer id;
+    private final int id;
 
     @NonNull
     private final String login;
 
     @NonNull
-    private final String name;
+    @Builder.Default
+    private final Optional<String> name = Optional.empty();
 
     @NonNull
     private final String type;
@@ -32,12 +34,12 @@ public class User {
     private final Instant createdAt;
 
     @NonNull
-    private final Integer followersNumber;
+    private final int followersNumber;
 
     @NonNull
-    private final Integer publicReposNumber;
+    private final int publicReposNumber;
 
-    public Integer getCalculation() {
+    public int getCalculation() {
         return followersNumber == 0 ? 0 : (6 / followersNumber * (2 + publicReposNumber));
     }
 

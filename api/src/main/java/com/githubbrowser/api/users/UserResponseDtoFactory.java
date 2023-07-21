@@ -11,7 +11,7 @@ public class UserResponseDtoFactory {
         return UserResponseDto.builder()
                 .id(user.getId())
                 .login(user.getLogin())
-                .name(user.getName())
+                .name(user.getName().orElse(null))
                 .type(user.getType())
                 .avatarUrl(user.getAvatarUrl())
                 .createdAt(user.getCreatedAt())

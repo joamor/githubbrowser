@@ -12,12 +12,11 @@ import java.time.Instant;
 public class UserResponseDto {
 
     @NonNull
-    private final Integer id;
+    private final int id;
 
     @NonNull
     private String login;
 
-    @NonNull
     private String name;
 
     @NonNull
@@ -29,6 +28,6 @@ public class UserResponseDto {
     private Instant createdAt;
 
     @NonNull
-    private Integer calculation;
+    private int calculation;
 
 }
